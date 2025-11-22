@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BABY KID'S | ¡Descúbrenos!</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente más "limpia" y moderna similar a la de tu logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            pink: '#F06292',    /* Rosa del logo */
+                            blue: '#0288D1',    /* Azul del logo */
+                            yellow: '#FBC02D',  /* Amarillo del logo */
+                            teal: '#26A69A',    /* Turquesa del logo */
+                            brown: '#8D6E63',   /* Color del osito */
+                            dark: '#212121'     /* Color del texto */
+                        }
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            /* Patrón sutil de puntos de colores */
+            background-image: radial-gradient(#F06292 1px, transparent 1px), radial-gradient(#0288D1 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+        .btn-social {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-social:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        /* Marco colorido para el logo (simula el anillo si no carga la imagen) */
+        .logo-ring {
+            background: conic-gradient(#F06292, #FBC02D, #26A69A, #0288D1, #F06292);
+            padding: 4px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Contenedor Principal -->
+    <main class="glass-card w-full max-w-4xl rounded-[2rem] overflow-hidden flex flex-col md:flex-row animate-fade-in-up relative">
+        
+        <!-- Decoración de esquinas con los colores de la marca -->
+        <div class="absolute top-0 left-0 w-32 h-32 bg-brand-pink rounded-full blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-32 h-32 bg-brand-blue rounded-full blur-3xl opacity-20 -z-10"></div>
+
+        <!-- Mitad Izquierda: Imagen de Producto/Tienda -->
+        <div class="w-full md:w-1/2 h-72 md:h-auto relative overflow-hidden group">
+            <img src="https://storage.googleapis.com/upload-tiendada-prod/public/file-storage/im/product/c9e15be1-5d74-4107-a86f-93e337b2c53f.vlyktz-1722037664603" 
+                 alt="" 
+                 class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:hidden"></div>
+            
+            <div class="absolute bottom-4 left-4 text-white md:hidden">
+                <p class="font-bold text-lg drop-shadow-md">Todo para tu bebé</p>
+            </div>
+        </div>
+
+        <!-- Mitad Derecha: Información y Logo -->
+        <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-center md:text-left relative">
+            
+            <!-- LOGO SECTION -->
+            <div class="mb-8 flex flex-col md:flex-row items-center justify-center md:justify-start gap-4">
+                <!-- AQUÍ VA TU LOGO: Reemplaza el src con tu archivo real -->
+                <div class="relative w-24 h-24 flex-shrink-0">
+                     <!-- Anillo decorativo animado de fondo -->
+                    <div class="absolute inset-0 rounded-full logo-ring animate-spin-slow opacity-50 blur-[1px]"></div>
+                    
+                    <!-- Contenedor de la imagen -->
+                    <div class="absolute inset-1 bg-white rounded-full overflow-hidden flex items-center justify-center border-2 border-white shadow-sm">
+                             <img src="https://i.ibb.co/gb4V2VMF/Gemini-Generated-Image-8kcp3e8kcp3e8kcp.png" class="w-full h-full object-contain" alt="Logo"> 
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl font-bold text-brand-dark tracking-wide leading-tight">
+                        BABY <br> <span class="text-brand-blue">KID'S</span>
+                    </h1>
+                </div>
+            </div>
+
+            <h2 class="text-lg text-gray-600 mb-8 font-medium">
+                Moda, juguetes y accesorios <br>
+                <span class="text-brand-pink font-bold">con mucho amor.</span>
+            </h2>
+
+            <!-- Botones de Acción -->
+            <div class="space-y-4 mb-8">
+                <a href="https://maps.app.goo.gl/r7kKsffHSQX1jf5m7" target="_blank" class="block w-full bg-gray-900 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:bg-gray-700 transition flex items-center justify-center gap-3 group hover:-translate-y-1">
+                    <i class="fas fa-map-location-dot text-brand-yellow group-hover:animate-bounce"></i> 
+                    Ver Ubicación
+                </a>
+                
+                <a href="https://wa.me/50241943350" target="_blank" class="block w-full bg-[#25D366] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:bg-[#20ba5a] transition flex items-center justify-center gap-3 hover:-translate-y-1">
+                    <i class="fab fa-whatsapp text-2xl"></i> 
+                    Contactar por WhatsApp
+                </a>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div>
+                <p class="text-xs uppercase tracking-widest text-gray-400 mb-4 font-bold text-center md:text-left">Nuestras Redes</p>
+                <div class="flex justify-center md:justify-start gap-3">
+                    <a href="#" class="btn-social w-10 h-10 rounded-full bg-blue-50 text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white shadow-sm border border-blue-100">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="btn-social w-10 h-10 rounded-full bg-pink-50 text-brand-pink flex items-center justify-center hover:bg-brand-pink hover:text-white shadow-sm border border-pink-100">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="btn-social w-10 h-10 rounded-full bg-gray-50 text-black flex items-center justify-center hover:bg-black hover:text-white shadow-sm border border-gray-200">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="mt-8 pt-6 border-t border-dashed border-gray-200 text-sm text-gray-500 flex items-center justify-center md:justify-start gap-2">
+                <i class="fas fa-clock text-brand-teal"></i>
+                <span>Lun - Sáb: 10:00 AM - 7:00 PM</span>
+                <span>Dom: 10:00 AM - 5:30 PM</span>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>
